@@ -2,7 +2,14 @@
 
 RIMT is a new RGB-Depth dataset, acquired from a mobile robot moving in a domestic environment testbed equipped with a motion capture system. This dataset was built to test and evaluate 3D position accuracy and people re-identification performance of multi-target tracking methods based on RGB-D data.
 
-The data was collected by teleoperating the MBOT in the ISRoboNet@Home Testbed with up to 3 targets moving in the environment. The robot is equipped with a tilt-controlled Orbbec Astra RGB-D camera positioned on the head that captures RGB and depth images with 640 x 480 pixel resolution at 30Hz. The testbed is an apartment-like environment designed to benchmark service robots and is equipped with a motion capture system composed of 12 OptiTrack® ”Prime 13” cameras (1.3 MP, 240 FPS), which provides real-time tracking data of rigid bodies with sub mm precision in 6 dimensions with low latency (4.2ms).
+The data was collected by teleoperating the MBOT in the ISRoboNet@Home Testbed[^1] with up to 3 targets moving in the environment. 
+
+![alt text](https://github.com/socrob/RIMT-Dataset/blob/main/Images/testbed.jpg "ISRoboNet@Home Testbed")
+
+The robot is equipped with a tilt-controlled Orbbec Astra RGB-D camera positioned on the head that captures RGB and depth images with 640 x 480 pixel resolution at 30Hz. The testbed is an apartment-like environment designed to benchmark service robots and is equipped with a motion capture system composed of 12 OptiTrack® ”Prime 13” cameras (1.3 MP, 240 FPS), which provides real-time tracking data of rigid bodies with sub mm precision in 6 dimensions with low latency (4.2ms).
+
+![alt text](https://www.researchgate.net/publication/360510271/figure/fig1/AS:1160524263886850@1653701954753/The-Mbot-mobile-robot-at-the-ISR-IST-ERL-certified-test-bed-performing-a-pick-and-place.ppm "Robot used to aquire the dataset")
+
 
 Although the camera frequency is 30Hz, the recording of the dataset was done at a lower frequency of approximately 10Hz, resulting in a total of 3144 RGB images, 3437 depth images and 2154 people instances.
 The RGB-D images, camera information, a map of the environment on the form of an occupany grid along with map metadata, odometry of the robot, transforms along reference frames and ground-truth are made available as ROS bag files.
@@ -14,6 +21,7 @@ As ground-truth, 3D positions of people in environment were obtained using the m
 Besides that, there were frames where the motion capture system failed, due to the positioning of the cameras and markers that were not visible, and the 3D ground-truth of some of the targets was not registered. In these cases, ground-truth was not associated with these frames and they should not be considered when evaluating performance metrics. After this process, ground-truth is associated with approximately 70% of the frames. This process is important because keeping frames with lack of
 ground-truth of some targets would lead to errors when evaluating methods on this dataset, such as the occurrence of incorrect false positives (cases where the method outputs a track that is not present in the ground-truth).
 
+[^1]: https://welcome.isr.tecnico.ulisboa.pt/isrobonet
 
 ## Content of the dataset 
 
