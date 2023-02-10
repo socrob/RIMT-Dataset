@@ -1,4 +1,11 @@
 # Re-ID Multi-People Tracking Dataset
+## Table of contents
+- [Introduction to the dataset](#introduction-to-the-dataset)
+- [Description of the dataset sequences](#description-of-the-dataset-sequences)
+- [Content of the dataset](#content-of-the-dataset)
+- [Download Dataset](#download-dataset)
+
+## Introduction to the dataset
 
 RIMT is a new RGB-Depth dataset, acquired from a mobile robot moving in a domestic environment testbed equipped with a motion capture system. This dataset was built to test and evaluate 3D position accuracy and people re-identification performance of multi-target tracking methods based on RGB-D data.
 
@@ -8,7 +15,7 @@ The data was collected by teleoperating the MBOT in the ISRoboNet@Home Testbed[^
 
 The robot is equipped with a tilt-controlled Orbbec Astra RGB-D camera positioned on the head that captures RGB and depth images with 640 x 480 pixel resolution at 30Hz. The testbed is an apartment-like environment designed to benchmark service robots and is equipped with a motion capture system composed of 12 OptiTrack® ”Prime 13” cameras (1.3 MP, 240 FPS), which provides real-time tracking data of rigid bodies with sub mm precision in 6 dimensions with low latency (4.2ms).
 
-![alt text](https://www.researchgate.net/publication/360510271/figure/fig1/AS:1160524263886850@1653701954753/The-Mbot-mobile-robot-at-the-ISR-IST-ERL-certified-test-bed-performing-a-pick-and-place.ppm "Robot used to aquire the dataset")
+![alt text](https://github.com/socrob/RIMT-Dataset/blob/main/Images/robot.jpg "Robot used to aquire the dataset")
 
 
 Although the camera frequency is 30Hz, the recording of the dataset was done at a lower frequency of approximately 10Hz, resulting in a total of 3144 RGB images, 3437 depth images and 2154 people instances.
@@ -22,6 +29,20 @@ Besides that, there were frames where the motion capture system failed, due to t
 ground-truth of some targets would lead to errors when evaluating methods on this dataset, such as the occurrence of incorrect false positives (cases where the method outputs a track that is not present in the ground-truth).
 
 [^1]: https://welcome.isr.tecnico.ulisboa.pt/isrobonet
+
+## Description of the dataset sequences
+
+The dataset consists of 7 videos with durations ranging from 40s to 1:10s. Each video contains different characteristics (camera and people movement) and represents different cases, so that the dataset is representative of several situations that can occur in an environment with multiple people and obstacles. The 7 sequences (videos) present in the dataset are the following:
+
+* **Still**: sequence recorded with a static camera. Three targets move around freely in front of the camera without being occluded by obstacles.
+* **Moving camera**: sequence recorded with the camera rotating while the robot’s base does not move. Three targets move around freely in front of the camera without being occluded by obstacles.
+* **Moving base**: sequence recorded with the robot moving around the environment. Three targets are present and are frequently occluded by obstacles. One of the targets also sits down and gets up again during the sequence.
+* **Chairs**: sequence recorded with the robot moving around the environment. Three targets are sitting down in chairs around two tables and during the sequence they get up, walk around and switch places several times.
+* **People following**: sequence recorded with the robot being teleoperated to follow a specific person around the environment. During the sequence, three targets are present and there are several occlusions caused by obstacles and people crossing paths.
+* **Changing clothes 1**: sequence recorded with the robot moving around the environment. Two targets are present. Both of the targets change their clothing during the sequence while in front of the camera.
+* **Changing clothes 2**: sequence recorded with the robot moving around the environment. Two targets are present. One of the targets exits the scene and re-enters with different clothes twice.
+
+These sequences cover most of the common cases that can occur in a domestic environment. There are several occlusions caused by furniture such as chairs, tables and a sofa or caused by other people when targets cross paths with each other. A specific case where the robot is following a person was also recorded, since this is a common task executed by mobile service robots. The last two sequences represent cases where targets change their clothes during the sequence, which is a challenging scenario for people re-identification. This dataset also has the particularity that all of the people present are wearing cirurgical masks, due to the Covid-19 pandemic.
 
 ## Content of the dataset 
 
