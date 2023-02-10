@@ -11,12 +11,15 @@ RIMT is a new RGB-Depth dataset, acquired from a mobile robot moving in a domest
 
 The data was collected by teleoperating the MBOT in the ISRoboNet@Home Testbed[^1] with up to 3 targets moving in the environment. 
 
-![alt text](https://github.com/socrob/RIMT-Dataset/blob/main/Images/testbed.jpg "ISRoboNet@Home Testbed")
-
+<p align="center">
+<img src="https://github.com/socrob/RIMT-Dataset/blob/main/Images/testbed.jpg" alt="ISRoboNet@Home Testbed" width="300">
+</p>
+  
 The robot is equipped with a tilt-controlled Orbbec Astra RGB-D camera positioned on the head that captures RGB and depth images with 640 x 480 pixel resolution at 30Hz. The testbed is an apartment-like environment designed to benchmark service robots and is equipped with a motion capture system composed of 12 OptiTrack® ”Prime 13” cameras (1.3 MP, 240 FPS), which provides real-time tracking data of rigid bodies with sub mm precision in 6 dimensions with low latency (4.2ms).
 
-![alt text](https://github.com/socrob/RIMT-Dataset/blob/main/Images/robot.jpg "Robot used to aquire the dataset")
-
+<p align="center">
+<img src="https://github.com/socrob/RIMT-Dataset/blob/main/Images/robot.jpg" alt="Robot used to aquire the dataset" width="300">
+</p>
 
 Although the camera frequency is 30Hz, the recording of the dataset was done at a lower frequency of approximately 10Hz, resulting in a total of 3144 RGB images, 3437 depth images and 2154 people instances.
 The RGB-D images, camera information, a map of the environment on the form of an occupany grid along with map metadata, odometry of the robot, transforms along reference frames and ground-truth are made available as ROS bag files.
@@ -41,6 +44,10 @@ The dataset consists of 7 videos with durations ranging from 40s to 1:10s. Each 
 * **People following**: sequence recorded with the robot being teleoperated to follow a specific person around the environment. During the sequence, three targets are present and there are several occlusions caused by obstacles and people crossing paths.
 * **Changing clothes 1**: sequence recorded with the robot moving around the environment. Two targets are present. Both of the targets change their clothing during the sequence while in front of the camera.
 * **Changing clothes 2**: sequence recorded with the robot moving around the environment. Two targets are present. One of the targets exits the scene and re-enters with different clothes twice.
+
+<p align="center">
+<img src="https://github.com/socrob/RIMT-Dataset/blob/main/Images/moving_base.png" alt="Moving base sequence example" width="300">
+</p>
 
 These sequences cover most of the common cases that can occur in a domestic environment. There are several occlusions caused by furniture such as chairs, tables and a sofa or caused by other people when targets cross paths with each other. A specific case where the robot is following a person was also recorded, since this is a common task executed by mobile service robots. The last two sequences represent cases where targets change their clothes during the sequence, which is a challenging scenario for people re-identification. This dataset also has the particularity that all of the people present are wearing cirurgical masks, due to the Covid-19 pandemic.
 
