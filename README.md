@@ -11,6 +11,8 @@ RIMT is a new RGB-Depth dataset, acquired from a mobile robot moving in a domest
 
 The data was collected by teleoperating the MBOT in the ISRoboNet@Home Testbed[^1] with up to 3 targets moving in the environment. 
 
+The data was collected by teleoperating the MBOT in the with up to 3 targets moving in the environment. The number of targets was chosen as 3 as it is the average number of people in households in countries such as Portugal or the U.S. [^2][^3].
+
 <p align="center">
 <img src="https://github.com/socrob/RIMT-Dataset/blob/main/Images/testbed.jpg" alt="ISRoboNet@Home Testbed" width="300">
 </p>
@@ -32,6 +34,8 @@ Besides that, there were frames where the motion capture system failed, due to t
 ground-truth of some targets would lead to errors when evaluating methods on this dataset, such as the occurrence of incorrect false positives (cases where the method outputs a track that is not present in the ground-truth).
 
 [^1]: https://welcome.isr.tecnico.ulisboa.pt/isrobonet
+[^2]: https://www.pordata.pt/portugal/dimensao+media+dos+agregados+domesticos+privados-511
+[^3]: https://www.statista.com/statistics/183657/average-size-of-a-family-in-the-us/
 
 ## Description of the dataset sequences
 
